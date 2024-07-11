@@ -38,7 +38,7 @@ int main() {
                 scanf(" %c", &sonuc);
 
                 if (sonuc == '1') {
-                    printf("\n----------------------------------------------------------\nAracınızın Motoru %s\nAracınız %s konumunda, kapıları kilitli\nAracınızın şarj seviyesi %% %f\nMevcut şarj seviyesi ile gidilebilecek mesafe %.3f Km \nAraç içi sıcaklık %.2f\n----------------------------------------------------------", motor, akonum, sarj, mesafe, sicaklik);
+                    printf("\n----------------------------------------------------------\nAracınızın Motoru %s\nAracınız %s konumunda, kapıları kilitli\nAracınızın şarj seviyesi %% %f\nMevcut şarj seviyesi ile gidilebilecek mesafe %.3f Km \nAraç içi sıcaklık %.2f°\n----------------------------------------------------------", motor, akonum, sarj, mesafe, sicaklik);
                     printf("\nAracınızı çalıştırmak/durdurmak için 1.\nAracınızı şarj etmek için 2.\nAraç içi sıcaklığı ayarlamak için 3.\nAraç konumunu Ev/Park olarak değiştirmek için 4.\nAracınızı açmak/kilitlemek için 5.\n----------------------------------------------------------\nYapmak istediğiniz işlemi seçiniz:");
                     scanf("%s", karar);
 
@@ -67,14 +67,14 @@ int main() {
                                 }
                                 break;
                             case 3:
-                                printf("Araç içi sıcaklığınız %.3f, lütfen yeni sıcaklık değerini giriniz (4-24): ", sicaklik);
+                                printf("Araç içi sıcaklığınız %.2f°, lütfen yeni sıcaklık değerini giriniz (4-24): ", sicaklik);
                                 char yeniSicaklik[32];
                                 scanf("%s", &yeniSicaklik);
                                 if (atof(yeniSicaklik) <= 24 && atof(yeniSicaklik) >= 4) {
                                     sicaklik = atof(yeniSicaklik);
                                     sarj = sarj - 0.0026;
 
-                                    printf("Araç içi sıcaklığınız:%.3f\n", sicaklik);
+                                    printf("Araç içi sıcaklığınız:%.2f°\n", sicaklik);
                                 } else {
                                     printf("Yanlış giriş yaptınız lütfen yeniden deneyin. Değerler değişmedi.\n");
                                 }
